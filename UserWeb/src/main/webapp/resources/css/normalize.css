@@ -1,0 +1,180 @@
+/**********************/
+/**** Normalisation ***/
+/**********************/
+
+/*** Taille Icone ***/
+
+.tinyIcon{    
+    font-size: 15px;
+    margin: 5px;
+    text-align: center;
+}
+
+.smallIcon {
+    font-size: 30px;
+    margin: 5px;
+    text-align: center;
+}
+
+.normalIcon {    
+    font-size: 40px;
+    margin: 5px;
+    text-align: center;
+}
+
+.bigIcon {    
+    font-size: 90px;
+    margin: 5px;
+    text-align: center;
+}
+
+.roundIcon{
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+}
+
+/*****************************************************/
+/********* Guideline / Classes de Base ***************/
+/*****************************************************/
+
+/* Objectif: Uniformiser le rendu des pages */
+
+.pageTitle{
+    /* Pas obligatoire mais unique par page, a priori le plus gros en taille */
+    font-size: 30px;
+}
+
+/* Pour le reste de la page, utiliser les classes de titres suivants */
+
+.smallTitle{    
+    font-size: 16px;
+}
+
+.normalTitle{    
+    font-size: 20px;
+}
+
+.bigTitle{    
+    font-size: 25px;
+}
+
+/* Pour les labels et les inputs des formulaires, appliquer la classe suivante */
+
+.formItem{
+    
+}
+
+.formButton{
+    /* au lieu de formItem specifiquement pour les boutons des formulaires */
+    color: #fff; /* blanc - couleur de la police */
+}
+
+/* A appliquer sur les titres et les boutons (et autres éléments disctinctifs) des pages selon leur fonctionnalité */
+
+.objetItem{
+    background-color: darkseagreen;
+}
+
+.souhaitItem{    
+    background-color: coral;
+}
+
+.userItem{       
+    background-color: cadetblue;
+}
+
+.echangeItem{    
+    background-color: darkcyan;    
+}
+
+.supportItem{    
+    background-color: darksalmon;   
+}
+
+.adminItem{   
+    /* concerne les tickets admins */
+    background-color: burlywood;   
+}
+
+.searchItem{    
+    background-color: lightgrey;
+    color: #333;
+}
+
+/* non exhaustif etc... */
+
+/****** Divisions de la page  *********/
+
+/*
+Rappels:
+- <div> élement display block, apparait sur une seule ligne
+- <span> élément inline , des éléments inline apparaissent les uns à côté des autres
+*/
+
+
+.sectionBloc, .oneRowBloc, .oneColonneBloc {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oneRowBloc{ 
+    flex-wrap: nowrap;
+}
+
+.oneColBloc{   
+    flex-flow: column nowrap;
+}
+
+/* Pour rappel une balise <section> est un conteneur affichant de la même manière des items <article> */
+
+.sectionBloc{
+    flex-wrap: wrap;
+}
+
+/* Articles remplissant le sectionBloc ratio: carré voire portrait */
+
+.smallArticle{
+    
+}
+
+.normalArticle{
+    
+}
+
+.bigArticle{
+    
+}
+
+/* Grid/Figures libres */
+
+/* Jouer sur la taille et le flex-grow des éléments, ne multiplier pas trop les conteneurs */
+
+.gridBloc{     
+    display: flex;
+    _flex-flow: ;
+    _justify-content: ;
+    _align-items: ;
+}
+
+/* pour exemple */
+
+.elementGauche{
+    _width: ;
+    _height: ;
+    _flex-grow: ;
+    _align-self: ;
+    _order: ;
+}
+.elementDroit{
+    
+}
+
+.elementBas{
+    
+}
+.elementHaut{
+    
+}
