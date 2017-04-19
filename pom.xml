@@ -5,7 +5,6 @@
 	<artifactId>GreenListP3</artifactId>
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
-	<name>Groupe FKQ-ROM</name>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -52,4 +51,5 @@
 		<module>UserWeb</module>
 		<module>Back</module>
 	</modules>
+	<description>Groupe FKQ-ROM</description>
 </project>

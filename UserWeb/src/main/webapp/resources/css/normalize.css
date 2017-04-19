@@ -12,13 +12,13 @@
 
 .smallIcon {
     font-size: 30px;
-    margin: 5px;
+    margin: 0px;
     text-align: center;
 }
 
 .normalIcon {    
     font-size: 40px;
-    margin: 5px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -41,9 +41,10 @@
 
 /* Objectif: Uniformiser le rendu des pages */
 
-.pageTitle{
+.pageTitle {
     /* Pas obligatoire mais unique par page, a priori le plus gros en taille */
-    font-size: 30px;
+    font-size: 40px;
+    color: #fff;
 }
 
 /* Pour le reste de la page, utiliser les classes de titres suivants */
@@ -63,7 +64,8 @@
 /* Pour les labels et les inputs des formulaires, appliquer la classe suivante */
 
 .formItem{
-    
+    width: 100%;  
+    border-radius: 2px;
 }
 
 .formButton{
@@ -71,7 +73,7 @@
     color: #fff; /* blanc - couleur de la police */
 }
 
-/* A appliquer sur les titres et les boutons (et autres Ã©lÃ©ments disctinctifs) des pages selon leur fonctionnalitÃ© */
+/* A appliquer sur les titres et les boutons (et autres éléments disctinctifs) des pages selon leur fonctionnalité */
 
 .objetItem{
     background-color: darkseagreen;
@@ -109,32 +111,38 @@
 
 /*
 Rappels:
-- <div> Ã©lement display block, apparait sur une seule ligne
-- <span> Ã©lÃ©ment inline , des Ã©lÃ©ments inline apparaissent les uns Ã  cÃ´tÃ© des autres
+- <div> élement display block, apparait sur une seule ligne
+- <span> élément inline , des éléments inline apparaissent les uns à côté des autres
 */
 
 
 .sectionBloc, .oneRowBloc, .oneColonneBloc {    
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
+
 .oneRowBloc{ 
     flex-wrap: nowrap;
+    margin: 10px;
 }
 
 .oneColBloc{   
     flex-flow: column nowrap;
+    margin: 0px;
 }
 
-/* Pour rappel une balise <section> est un conteneur affichant de la mÃªme maniÃ¨re des items <article> */
+.grow{
+    flex-grow: 1;
+}
+
+/* Pour rappel une balise <section> est un conteneur affichant de la même manière des items <article> */
 
 .sectionBloc{
     flex-wrap: wrap;
 }
 
-/* Articles remplissant le sectionBloc ratio: carrÃ© voire portrait */
+/* Articles remplissant le sectionBloc ratio: carré voire portrait */
 
 .smallArticle{
     
@@ -150,7 +158,7 @@ Rappels:
 
 /* Grid/Figures libres */
 
-/* Jouer sur la taille et le flex-grow des Ã©lÃ©ments, ne multiplier pas trop les conteneurs */
+/* Jouer sur la taille et le flex-grow des éléments, ne multiplier pas trop les conteneurs */
 
 .gridBloc{     
     display: flex;
@@ -177,4 +185,177 @@ Rappels:
 }
 .elementHaut{
     
+}
+
+/******* Karen **********/
+
+
+.versusBloc
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.versusBloc div {
+    width: 50%;
+    
+}
+
+.versusBloc div div {
+    width: 100%;   
+}
+
+.descriptionForm{
+    border: 2px solid rgb(215,215,215);
+    border-radius: 2px;
+    height: 60px;
+    margin:10px;
+}
+
+.boutonsBloc{
+    justify-content: flex-end;
+    background-color:  rgb(238,238,238);
+    width: 100%;
+     margin: 0;
+    margin-top: 20px;
+}
+
+/************** *************/
+
+
+.photo
+{
+    display: flex;
+    -background-color: white;
+    background-color: rgb(238,238,238);
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.pageObjet {
+    height: 350px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.separation {
+    width: 5px;
+    height: 100%;
+    background-color: floralwhite;
+    margin: 10px;
+    margin-right: 15px;
+}
+
+.pageTitleBloc {
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    margin: 0;
+    border-radius: 2px;
+}
+
+.inputText {
+    border: 2px solid rgb(215,215,215);
+    height: 40px;
+    margin: 10px;
+    
+}
+
+.textInputText {
+    font-size:  15px;
+    color: rgb(215,215,215);
+}
+
+#name {
+    position: relative;
+}
+
+
+
+.photosBloc {
+    -background-color: rgb(238,238,238);
+    height: 120px;
+    margin: 10px;
+    width: 70%;
+}
+
+.buttonForm {
+    width: 170px;
+    height: 30px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 17px;
+    color: white;
+    margin:0;
+}
+
+
+
+
+
+
+
+.buttonFormCategory {
+margin: 10px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.categoryBloc {
+    display: flex;
+    justify-content: space-around;
+}
+
+.purpleItem {
+     background-color: mediumpurple;
+}
+
+
+
+.yellowItem {
+    background-color: gold;
+}
+
+.blueItem {
+    background-color: skyblue;
+}
+
+
+
+.pageObjet {
+    
+}
+
+.pageSouhait {
+    height: 650px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    background-color: white;
+}
+
+.listePageObjet {
+     height: 200px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.pageComplementBloc {
+      width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    margin: 0;
+    border-radius: 2px;
 }
