@@ -6,3 +6,4 @@
 @import url("#{resource['css:dashboard.css']}");
 @import url("#{resource['css:tools.css']}");
 @import url("#{resource['css:normalize.css']}");
+@import url("#{resource['css:resultats.css']}");

@@ -1,0 +1,72 @@
+.objetArticle {     
+    margin: 10px;
+    width: 260px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 310px;
+    padding: 32px;
+    position: relative;
+}
+
+.letter:before,
+.letter:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.letter:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.8deg);
+}
+
+.letter:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(3deg);
+}
+
+.imageObjet {
+    width: 100%;
+    height: 85%;
+    background-image: url("#{resource['images/objet1.png']}");
+    background-size: cover;
+}
+
+.titleObjet{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.objetIconeBloc{
+    width: 100%;
+}
+
+
+.objetIconeBloc ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.objetIconeBloc ul li {
+    margin: 2px;
+    flex-grow: 1;
+    padding: 5px;
+    flex-grow: 1;
+}
