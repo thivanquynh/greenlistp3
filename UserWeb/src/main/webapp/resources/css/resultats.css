@@ -1,10 +1,61 @@
+/************ Resultats Main *************/
+
+
+.resultatsBloc{
+    width: 95%;
+    align-items: stretch;
+    margin: 20px;
+}
+
+
+
+
+/************ Google Maps *************/
+
+.gMapBloc{
+    margin: 10px 0 10px 0;
+    flex-grow: 1;
+}
+
+
+
+/************ Objets *************/
+
+
+.objetsBloc{ 
+}
+
 .objetArticle {     
     margin: 10px;
     width: 260px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    position: relative;
+}
+
+.numObjet{    
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    background-color: #FA8072;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addBasketIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* Do not set top / left! */
 }
 
 .letter {
@@ -12,7 +63,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 250px;
     height: 310px;
-    padding: 32px;
     position: relative;
 }
 
@@ -41,20 +91,22 @@
     transform: rotate(3deg);
 }
 
+.imageDiv {
+    width: 250px;
+    height: 235px;
+    padding: 30px 30px 20px 30px;
+}
+
 .imageObjet {
     width: 100%;
-    height: 85%;
-<<<<<<< HEAD
+    height: 100%;
     background-image: url("#{resource['images/objet1.png']}");
-=======
-    background-image: url(../images/objet1.png);
->>>>>>> refs/remotes/origin/master
     background-size: cover;
 }
 
 .titleObjet{
-    margin-top: 20px;
     text-align: center;
+    flex-grow: 1;
 }
 
 .objetIconeBloc{
@@ -65,6 +117,7 @@
 .objetIconeBloc ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -73,4 +126,16 @@
     flex-grow: 1;
     padding: 5px;
     flex-grow: 1;
+    font-size: 25px;
+}
+
+.catObjet{
+    color: #fff;
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.objetIconeText{
+    font-size: 20px;
 }
