@@ -61,7 +61,7 @@ public class Preference implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "IDFREQUENCE", nullable = false)
+	@JoinColumn(name = "IDFREQUENCE", nullable = true)
 	public FrequenceEmail getFrequenceEmail() {
 		return this.frequenceEmail;
 	}
