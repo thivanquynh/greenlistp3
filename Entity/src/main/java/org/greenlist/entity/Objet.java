@@ -30,9 +30,12 @@ public class Objet  implements java.io.Serializable {
 
 
      private int id;
+     
      private Produit produit;
      private TrancheAge trancheAge;
+     
      private Utilisateur utilisateur;
+     
      private String libelle;
      private Date dateDepot;
      private int valeur;
@@ -61,7 +64,9 @@ public class Objet  implements java.io.Serializable {
         this.dateCreation = dateCreation;
     }
     public Objet(int id, Produit produit, TrancheAge trancheAge, Utilisateur utilisateur, String libelle, Date dateDepot, int valeur, String description, Date dateCreation, Date datePublication, Date dateDepublication, List<Echange> echanges, List<Ticket> tickets, List<Messagepublic> messagepublics, List<Photo> photos, List<Panier> paniers) {
+    	//genere
        this.id = id;
+       //saisi
        this.produit = produit;
        this.trancheAge = trancheAge;
        this.utilisateur = utilisateur;
@@ -69,7 +74,9 @@ public class Objet  implements java.io.Serializable {
        this.dateDepot = dateDepot;
        this.valeur = valeur;
        this.description = description;
+       //sysdate
        this.dateCreation = dateCreation;
+       //null
        this.datePublication = datePublication;
        this.dateDepublication = dateDepublication;
        this.echanges = echanges;
@@ -80,8 +87,6 @@ public class Objet  implements java.io.Serializable {
     }
    
      @Id 
-
-    
     @Column(name="ID", unique=true, nullable=false)
     public int getId() {
         return this.id;
@@ -91,7 +96,7 @@ public class Objet  implements java.io.Serializable {
         this.id = id;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="IDPRODUIT", nullable=false)
     public Produit getProduit() {
         return this.produit;
