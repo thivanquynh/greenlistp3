@@ -27,7 +27,11 @@ import javax.persistence.TemporalType;
 public class Utilisateur  implements java.io.Serializable {
 
 
-     private int id;
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
      private Experience experience;
      private MotifRadiation motifRadiation;
      private Panier panier;
