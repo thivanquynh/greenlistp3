@@ -66,7 +66,11 @@
 	</build>
 	<modules>
 		<module>UserWeb</module>
-		<module>Back</module>
+		<module>Entity</module>
+		<module>Data_API</module>
+		<module>Data_EJB</module>
+		<module>Business_API</module>
+		<module>Business_EJB</module>
 	</modules>
 	<description>Groupe FKQ-ROM</description>
 </project>
