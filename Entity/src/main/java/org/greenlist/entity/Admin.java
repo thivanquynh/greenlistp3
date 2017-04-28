@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,9 +36,9 @@ public class Admin  implements java.io.Serializable {
      private String password;
      private Date debutSuspension;
      private Date finSuspenssion;
-     private Set coupons = new HashSet(0);
-     private Set tickets = new HashSet(0);
-     private Set itemFaqs = new HashSet(0);
+     private List<Coupon> coupons = new ArrayList<>();
+     private List<Ticket> tickets = new ArrayList<>();
+     private List<ItemFaq> itemFaqs = new ArrayList<>();
 
     public Admin() {
     }
@@ -51,7 +53,7 @@ public class Admin  implements java.io.Serializable {
         this.dateInscription = dateInscription;
         this.password = password;
     }
-    public Admin(int id, String pseudo, String nom, String prenom, String email, Date dateInscription, Date dateDesinscription, String password, Date debutSuspension, Date finSuspenssion, Set coupons, Set tickets, Set itemFaqs) {
+    public Admin(int id, String pseudo, String nom, String prenom, String email, Date dateInscription, Date dateDesinscription, String password, Date debutSuspension, Date finSuspenssion, List<Coupon> coupons, List<Ticket> tickets, List<ItemFaq> itemFaqs) {
        this.id = id;
        this.pseudo = pseudo;
        this.nom = nom;
@@ -170,29 +172,29 @@ public class Admin  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="admin")
-    public Set getCoupons() {
+    public List<Coupon> getCoupons() {
         return this.coupons;
     }
     
-    public void setCoupons(Set coupons) {
+    public void setCoupons(List<Coupon> coupons) {
         this.coupons = coupons;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="admin")
-    public Set getTickets() {
+    public List<Ticket> getTickets() {
         return this.tickets;
     }
     
-    public void setTickets(Set tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="admin")
-    public Set getItemFaqs() {
+    public List<ItemFaq> getItemFaqs() {
         return this.itemFaqs;
     }
     
-    public void setItemFaqs(Set itemFaqs) {
+    public void setItemFaqs(List<ItemFaq> itemFaqs) {
         this.itemFaqs = itemFaqs;
     }
 

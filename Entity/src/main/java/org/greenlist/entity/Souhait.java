@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +41,7 @@ public class Souhait  implements java.io.Serializable {
      private Date dateSupression;
      private Date datePublication;
      private Date dateDepublication;
-     private Set tickets = new HashSet(0);
+     private List<Ticket> tickets = new ArrayList<>();
 
     public Souhait() {
     }
@@ -51,7 +53,7 @@ public class Souhait  implements java.io.Serializable {
         this.libelle = libelle;
         this.dateDepot = dateDepot;
     }
-    public Souhait(int id, Domaine domaine, Groupe groupe, Liste liste, Produit produit, TrancheAge trancheAge, String libelle, Date dateDepot, Date dateExpiration, Integer valeurmax, Date dateSupression, Date datePublication, Date dateDepublication, Set tickets) {
+    public Souhait(int id, Domaine domaine, Groupe groupe, Liste liste, Produit produit, TrancheAge trancheAge, String libelle, Date dateDepot, Date dateExpiration, Integer valeurmax, Date dateSupression, Date datePublication, Date dateDepublication, List<Ticket> tickets) {
        this.id = id;
        this.domaine = domaine;
        this.groupe = groupe;
@@ -201,11 +203,11 @@ public class Souhait  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="souhait")
-    public Set getTickets() {
+    public List<Ticket> getTickets() {
         return this.tickets;
     }
     
-    public void setTickets(Set tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 

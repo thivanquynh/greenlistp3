@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,22 +52,22 @@ public class Utilisateur  implements java.io.Serializable {
      private Date dateDesinscription;
      private Date dateRadiation;
      private Date dateDerniereConnexion;
-     private Set ticketsForIdutilisateurremonte = new HashSet(0);
-     private Set preferences = new HashSet(0);
-     private Set listes = new HashSet(0);
-     private Set adresses = new HashSet(0);
-     private Set messages = new HashSet(0);
-     private Set echangesForIdusera = new HashSet(0);
-     private Set echangesForIduserb = new HashSet(0);
-     private Set objets = new HashSet(0);
-     private Set ticketsForIdutilisateursignale = new HashSet(0);
-     private Set coupons = new HashSet(0);
-     private Set notesForIdutilisateurnote = new HashSet(0);
-     private Set emails = new HashSet(0);
-     private Set notifications = new HashSet(0);
-     private Set notesForIdutilisateurestnote = new HashSet(0);
-     private Set messagepublics = new HashSet(0);
-     private Set paniers = new HashSet(0);
+     private List<Ticket> ticketsForIdutilisateurremonte = new ArrayList<>();
+     private List<Preference> preferences = new ArrayList<>();
+     private List<Liste> listes = new ArrayList<>();
+     private List<Adresse> adresses = new ArrayList<>();
+     private List<Message> messages = new ArrayList<>();
+     private List<Echange> echangesForIdusera = new ArrayList<>();
+     private List<Echange> echangesForIduserb = new ArrayList<>();
+     private List<Objet> objets = new ArrayList<>();
+     private List<Ticket> ticketsForIdutilisateursignale = new ArrayList<>();
+     private List<Coupon> coupons = new ArrayList<>();
+     private List<Note> notesForIdutilisateurnote = new ArrayList<>();
+     private List<Email> emails = new ArrayList<>();
+     private List<Notification> notifications = new ArrayList<>();
+     private List<Note> notesForIdutilisateurestnote = new ArrayList<>();
+     private List<Messagepublic> messagepublics = new ArrayList<>();
+     private List<Panier> paniers = new ArrayList<>();
 
     public Utilisateur() {
     }
@@ -85,7 +87,7 @@ public class Utilisateur  implements java.io.Serializable {
         this.solde = solde;
         this.password = password;
     }
-    public Utilisateur(int id, Experience experience, MotifRadiation motifRadiation, Panier panier, Preference preference, String pseudo, String nom, String prenom, String email, Date dateNaissance, Date dateInscription, String photo, int solde, Date debutSuspension, Date finSuspension, String password, Date dateDesinscription, Date dateRadiation, Date dateDerniereConnexion, Set ticketsForIdutilisateurremonte, Set preferences, Set listes, Set adresses, Set messages, Set echangesForIdusera, Set echangesForIduserb, Set objets, Set ticketsForIdutilisateursignale, Set coupons, Set notesForIdutilisateurnote, Set emails, Set notifications, Set notesForIdutilisateurestnote, Set messagepublics, Set paniers) {
+    public Utilisateur(int id, Experience experience, MotifRadiation motifRadiation, Panier panier, Preference preference, String pseudo, String nom, String prenom, String email, Date dateNaissance, Date dateInscription, String photo, int solde, Date debutSuspension, Date finSuspension, String password, Date dateDesinscription, Date dateRadiation, Date dateDerniereConnexion, List<Ticket> ticketsForIdutilisateurremonte, List<Preference> preferences, List<Liste> listes, List<Adresse> adresses, List<Message> messages, List<Echange> echangesForIdusera, List<Echange> echangesForIduserb, List<Objet> objets, List<Ticket> ticketsForIdutilisateursignale, List<Coupon> coupons, List<Note> notesForIdutilisateurnote, List<Email> emails, List<Notification> notifications, List<Note> notesForIdutilisateurestnote, List<Messagepublic> messagepublics, List<Panier> paniers) {
        this.id = id;
        this.experience = experience;
        this.motifRadiation = motifRadiation;
@@ -316,146 +318,146 @@ public class Utilisateur  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIdutilisateurremonte")
-    public Set getTicketsForIdutilisateurremonte() {
+    public List<Ticket> getTicketsForIdutilisateurremonte() {
         return this.ticketsForIdutilisateurremonte;
     }
     
-    public void setTicketsForIdutilisateurremonte(Set ticketsForIdutilisateurremonte) {
+    public void setTicketsForIdutilisateurremonte(List<Ticket> ticketsForIdutilisateurremonte) {
         this.ticketsForIdutilisateurremonte = ticketsForIdutilisateurremonte;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getPreferences() {
+    public List<Preference> getPreferences() {
         return this.preferences;
     }
     
-    public void setPreferences(Set preferences) {
+    public void setPreferences(List<Preference> preferences) {
         this.preferences = preferences;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getListes() {
+    public List<Liste> getListes() {
         return this.listes;
     }
     
-    public void setListes(Set listes) {
+    public void setListes(List<Liste> listes) {
         this.listes = listes;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getAdresses() {
+    public List<Adresse> getAdresses() {
         return this.adresses;
     }
     
-    public void setAdresses(Set adresses) {
+    public void setAdresses(List<Adresse> adresses) {
         this.adresses = adresses;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getMessages() {
+    public List<Message> getMessages() {
         return this.messages;
     }
     
-    public void setMessages(Set messages) {
-        this.messages = messages;
+    public void setMessages(List<Message> messages) {
+        this.messages =  messages;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIdusera")
-    public Set getEchangesForIdusera() {
+    public List<Echange> getEchangesForIdusera() {
         return this.echangesForIdusera;
     }
     
-    public void setEchangesForIdusera(Set echangesForIdusera) {
+    public void setEchangesForIdusera(List<Echange> echangesForIdusera) {
         this.echangesForIdusera = echangesForIdusera;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIduserb")
-    public Set getEchangesForIduserb() {
+    public List<Echange> getEchangesForIduserb() {
         return this.echangesForIduserb;
     }
     
-    public void setEchangesForIduserb(Set echangesForIduserb) {
+    public void setEchangesForIduserb(List<Echange> echangesForIduserb) {
         this.echangesForIduserb = echangesForIduserb;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getObjets() {
+    public List<Objet> getObjets() {
         return this.objets;
     }
     
-    public void setObjets(Set objets) {
+    public void setObjets(List<Objet> objets) {
         this.objets = objets;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIdutilisateursignale")
-    public Set getTicketsForIdutilisateursignale() {
+    public List<Ticket> getTicketsForIdutilisateursignale() {
         return this.ticketsForIdutilisateursignale;
     }
     
-    public void setTicketsForIdutilisateursignale(Set ticketsForIdutilisateursignale) {
+    public void setTicketsForIdutilisateursignale(List<Ticket> ticketsForIdutilisateursignale) {
         this.ticketsForIdutilisateursignale = ticketsForIdutilisateursignale;
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="utilisateurs")
-    public Set getCoupons() {
+    public List<Coupon> getCoupons() {
         return this.coupons;
     }
     
-    public void setCoupons(Set coupons) {
+    public void setCoupons(List<Coupon> coupons) {
         this.coupons = coupons;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIdutilisateurnote")
-    public Set getNotesForIdutilisateurnote() {
+    public List<Note> getNotesForIdutilisateurnote() {
         return this.notesForIdutilisateurnote;
     }
     
-    public void setNotesForIdutilisateurnote(Set notesForIdutilisateurnote) {
+    public void setNotesForIdutilisateurnote(List<Note> notesForIdutilisateurnote) {
         this.notesForIdutilisateurnote = notesForIdutilisateurnote;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getEmails() {
+    public List<Email> getEmails() {
         return this.emails;
     }
     
-    public void setEmails(Set emails) {
+    public void setEmails(List<Email> emails) {
         this.emails = emails;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getNotifications() {
+    public List<Notification> getNotifications() {
         return this.notifications;
     }
     
-    public void setNotifications(Set notifications) {
+    public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateurByIdutilisateurestnote")
-    public Set getNotesForIdutilisateurestnote() {
+    public List<Note> getNotesForIdutilisateurestnote() {
         return this.notesForIdutilisateurestnote;
     }
     
-    public void setNotesForIdutilisateurestnote(Set notesForIdutilisateurestnote) {
+    public void setNotesForIdutilisateurestnote(List<Note> notesForIdutilisateurestnote) {
         this.notesForIdutilisateurestnote = notesForIdutilisateurestnote;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getMessagepublics() {
+    public List<Messagepublic> getMessagepublics() {
         return this.messagepublics;
     }
     
-    public void setMessagepublics(Set messagepublics) {
+    public void setMessagepublics(List<Messagepublic> messagepublics) {
         this.messagepublics = messagepublics;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="utilisateur")
-    public Set getPaniers() {
+    public List<Panier> getPaniers() {
         return this.paniers;
     }
     
-    public void setPaniers(Set paniers) {
+    public void setPaniers(List<Panier> paniers) {
         this.paniers = paniers;
     }
 
