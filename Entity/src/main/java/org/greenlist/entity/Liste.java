@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +36,7 @@ public class Liste  implements java.io.Serializable {
      private Date dateExpiration;
      private Date dateDesactivationDebut;
      private Date dateDesactivationFin;
-     private Set souhaits = new HashSet(0);
+     private List<Souhait> souhaits = new ArrayList<>();
 
     public Liste() {
     }
@@ -45,7 +47,7 @@ public class Liste  implements java.io.Serializable {
         this.libelle = libelle;
         this.dateCreation = dateCreation;
     }
-    public Liste(int id, Utilisateur utilisateur, String libelle, String description, Date dateCreation, Date dateExpiration, Date dateDesactivationDebut, Date dateDesactivationFin, Set souhaits) {
+    public Liste(int id, Utilisateur utilisateur, String libelle, String description, Date dateCreation, Date dateExpiration, Date dateDesactivationDebut, Date dateDesactivationFin, List<Souhait> souhaits) {
        this.id = id;
        this.utilisateur = utilisateur;
        this.libelle = libelle;
@@ -140,11 +142,11 @@ public class Liste  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="liste")
-    public Set getSouhaits() {
+    public List<Souhait> getSouhaits() {
         return this.souhaits;
     }
     
-    public void setSouhaits(Set souhaits) {
+    public void setSouhaits(List<Souhait> souhaits) {
         this.souhaits = souhaits;
     }
 
