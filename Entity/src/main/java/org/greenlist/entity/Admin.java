@@ -4,12 +4,12 @@ package org.greenlist.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,7 +26,9 @@ import javax.persistence.TemporalType;
 public class Admin  implements java.io.Serializable {
 
 
-     private int id;
+	private static final long serialVersionUID = 1L;
+	
+	private int id;
      private String pseudo;
      private String nom;
      private String prenom;
@@ -69,10 +71,9 @@ public class Admin  implements java.io.Serializable {
        this.itemFaqs = itemFaqs;
     }
    
-     @Id 
-
-    
+    @Id 
     @Column(name="ID", unique=true, nullable=false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return this.id;
     }
@@ -82,7 +83,7 @@ public class Admin  implements java.io.Serializable {
     }
 
     
-    @Column(name="PSEUDO", nullable=false, length=50)
+    @Column(name="PSEUDO", nullable=false, length=50, unique=true)
     public String getPseudo() {
         return this.pseudo;
     }
@@ -112,7 +113,7 @@ public class Admin  implements java.io.Serializable {
     }
 
     
-    @Column(name="EMAIL", nullable=false, length=100)
+    @Column(name="EMAIL", nullable=false, length=100, unique=true)
     public String getEmail() {
         return this.email;
     }
