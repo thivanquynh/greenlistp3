@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Typeticket  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set tickets = new HashSet(0);
+     private List<Ticket> tickets =new ArrayList<>();
 
     public Typeticket() {
     }
@@ -33,7 +35,7 @@ public class Typeticket  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public Typeticket(int id, String libelle, Set tickets) {
+    public Typeticket(int id, String libelle, List<Ticket> tickets) {
        this.id = id;
        this.libelle = libelle;
        this.tickets = tickets;
@@ -62,11 +64,11 @@ public class Typeticket  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="typeticket")
-    public Set getTickets() {
+    public List<Ticket> getTickets() {
         return this.tickets;
     }
     
-    public void setTickets(Set tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 

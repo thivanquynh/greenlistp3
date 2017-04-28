@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,7 +40,7 @@ public class Ticket  implements java.io.Serializable {
      private String description;
      private Date dateemission;
      private Date datecloture;
-     private Set messages = new HashSet(0);
+     private List<Message> messages = new ArrayList<>();
 
     public Ticket() {
     }
@@ -52,7 +54,7 @@ public class Ticket  implements java.io.Serializable {
         this.description = description;
         this.dateemission = dateemission;
     }
-    public Ticket(int id, Admin admin, Message message, Motifticket motifticket, Objet objet, Souhait souhait, Typeticket typeticket, Utilisateur utilisateurByIdutilisateurremonte, Utilisateur utilisateurByIdutilisateursignale, String description, Date dateemission, Date datecloture, Set messages) {
+    public Ticket(int id, Admin admin, Message message, Motifticket motifticket, Objet objet, Souhait souhait, Typeticket typeticket, Utilisateur utilisateurByIdutilisateurremonte, Utilisateur utilisateurByIdutilisateursignale, String description, Date dateemission, Date datecloture, List<Message> messages) {
        this.id = id;
        this.admin = admin;
        this.message = message;
@@ -191,11 +193,11 @@ public class Ticket  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="ticket")
-    public Set getMessages() {
+    public List<Message> getMessages() {
         return this.messages;
     }
     
-    public void setMessages(Set messages) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
 

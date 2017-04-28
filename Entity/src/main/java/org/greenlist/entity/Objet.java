@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,11 +40,11 @@ public class Objet  implements java.io.Serializable {
      private Date dateCreation;
      private Date datePublication;
      private Date dateDepublication;
-     private Set echanges = new HashSet(0);
-     private Set tickets = new HashSet(0);
-     private Set messagepublics = new HashSet(0);
-     private Set photos = new HashSet(0);
-     private Set paniers = new HashSet(0);
+     private List<Echange> echanges = new ArrayList<>();
+     private List<Ticket> tickets = new ArrayList<>();
+     private List<Messagepublic> messagepublics = new ArrayList<>();
+     private List<Photo> photos = new ArrayList<>();
+     private List<Panier> paniers = new ArrayList<>();
 
     public Objet() {
     }
@@ -58,7 +60,7 @@ public class Objet  implements java.io.Serializable {
         this.valeur = valeur;
         this.dateCreation = dateCreation;
     }
-    public Objet(int id, Produit produit, TrancheAge trancheAge, Utilisateur utilisateur, String libelle, Date dateDepot, int valeur, String description, Date dateCreation, Date datePublication, Date dateDepublication, Set echanges, Set tickets, Set messagepublics, Set photos, Set paniers) {
+    public Objet(int id, Produit produit, TrancheAge trancheAge, Utilisateur utilisateur, String libelle, Date dateDepot, int valeur, String description, Date dateCreation, Date datePublication, Date dateDepublication, List<Echange> echanges, List<Ticket> tickets, List<Messagepublic> messagepublics, List<Photo> photos, List<Panier> paniers) {
        this.id = id;
        this.produit = produit;
        this.trancheAge = trancheAge;
@@ -190,47 +192,47 @@ public class Objet  implements java.io.Serializable {
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="objets")
-    public Set getEchanges() {
+    public List<Echange> getEchanges() {
         return this.echanges;
     }
     
-    public void setEchanges(Set echanges) {
+    public void setEchanges(List<Echange> echanges) {
         this.echanges = echanges;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="objet")
-    public Set getTickets() {
+    public List<Ticket> getTickets() {
         return this.tickets;
     }
     
-    public void setTickets(Set tickets) {
+    public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="objet")
-    public Set getMessagepublics() {
+    public List<Messagepublic> getMessagepublics() {
         return this.messagepublics;
     }
     
-    public void setMessagepublics(Set messagepublics) {
+    public void setMessagepublics(List<Messagepublic> messagepublics) {
         this.messagepublics = messagepublics;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="objet")
-    public Set getPhotos() {
+    public List<Photo> getPhotos() {
         return this.photos;
     }
     
-    public void setPhotos(Set photos) {
+    public void setPhotos(List<Photo> photos) {
         this.photos = photos;
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="objets")
-    public Set getPaniers() {
+    public List<Panier> getPaniers() {
         return this.paniers;
     }
     
-    public void setPaniers(Set paniers) {
+    public void setPaniers(List<Panier> paniers) {
         this.paniers = paniers;
     }
 

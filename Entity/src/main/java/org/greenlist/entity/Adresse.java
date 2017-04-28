@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,7 +33,7 @@ public class Adresse  implements java.io.Serializable {
      private String ville;
      private double longitude;
      private double latittude;
-     private Set rdvs = new HashSet(0);
+     private List<Rdv> rdvs = new ArrayList<>();
 
     public Adresse() {
     }
@@ -45,7 +47,7 @@ public class Adresse  implements java.io.Serializable {
         this.longitude = longitude;
         this.latittude = latittude;
     }
-    public Adresse(int id, Utilisateur utilisateur, String numeroVoie, String rue, String codePostal, String ville, double longitude, double latittude, Set rdvs) {
+    public Adresse(int id, Utilisateur utilisateur, String numeroVoie, String rue, String codePostal, String ville, double longitude, double latittude, List<Rdv> rdvs) {
        this.id = id;
        this.utilisateur = utilisateur;
        this.numeroVoie = numeroVoie;
@@ -140,11 +142,11 @@ public class Adresse  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="adresse")
-    public Set getRdvs() {
+    public List<Rdv> getRdvs() {
         return this.rdvs;
     }
     
-    public void setRdvs(Set rdvs) {
+    public void setRdvs(List<Rdv> rdvs) {
         this.rdvs = rdvs;
     }
 

@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +25,8 @@ public class Domaine  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set groupes = new HashSet(0);
-     private Set souhaits = new HashSet(0);
+     private List<Groupe> groupes = new ArrayList<>();
+     private List<Souhait> souhaits = new ArrayList<>();
 
     public Domaine() {
     }
@@ -34,7 +36,7 @@ public class Domaine  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public Domaine(int id, String libelle, Set groupes, Set souhaits) {
+    public Domaine(int id, String libelle, List<Groupe> groupes, List<Souhait> souhaits) {
        this.id = id;
        this.libelle = libelle;
        this.groupes = groupes;
@@ -64,20 +66,20 @@ public class Domaine  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="domaine")
-    public Set getGroupes() {
+    public List<Groupe> getGroupes() {
         return this.groupes;
     }
     
-    public void setGroupes(Set groupes) {
+    public void setGroupes(List<Groupe> groupes) {
         this.groupes = groupes;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="domaine")
-    public Set getSouhaits() {
+    public List<Souhait> getSouhaits() {
         return this.souhaits;
     }
     
-    public void setSouhaits(Set souhaits) {
+    public void setSouhaits(List<Souhait> souhaits) {
         this.souhaits = souhaits;
     }
 
