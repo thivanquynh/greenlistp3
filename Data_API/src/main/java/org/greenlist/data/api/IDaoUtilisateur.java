@@ -4,7 +4,7 @@ import org.greenlist.entity.Utilisateur;
 
 public interface IDaoUtilisateur {
 
-	public Utilisateur seConnecter (String mail, String mdp);
+	public Utilisateur seConnecter(String pseudo, String mdp) throws Exception;
 	
-	public Utilisateur getUtilisateurById(int idUtilisateur);
+	public Utilisateur getUtilisateurById(int idUtilisateur) throws Exception;
 }
