@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,8 +26,8 @@ public class Typenotification  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set preferences = new HashSet(0);
-     private Set notifications = new HashSet(0);
+     private List<Preference> preferences = new ArrayList<>();
+     private List<Notification> notifications = new ArrayList<>();
 
     public Typenotification() {
     }
@@ -35,7 +37,7 @@ public class Typenotification  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public Typenotification(int id, String libelle, Set preferences, Set notifications) {
+    public Typenotification(int id, String libelle, List<Preference> preferences, List<Notification> notifications) {
        this.id = id;
        this.libelle = libelle;
        this.preferences = preferences;
@@ -65,20 +67,20 @@ public class Typenotification  implements java.io.Serializable {
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="typenotifications")
-    public Set getPreferences() {
+    public List<Preference> getPreferences() {
         return this.preferences;
     }
     
-    public void setPreferences(Set preferences) {
+    public void setPreferences(List<Preference> preferences) {
         this.preferences = preferences;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="typenotification")
-    public Set getNotifications() {
+    public List<Notification> getNotifications() {
         return this.notifications;
     }
     
-    public void setNotifications(Set notifications) {
+    public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
     }
 

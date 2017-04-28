@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Theme  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set itemFaqs = new HashSet(0);
+     private List<ItemFaq> itemFaqs = new ArrayList<>();
 
     public Theme() {
     }
@@ -33,7 +35,7 @@ public class Theme  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public Theme(int id, String libelle, Set itemFaqs) {
+    public Theme(int id, String libelle, List<ItemFaq> itemFaqs) {
        this.id = id;
        this.libelle = libelle;
        this.itemFaqs = itemFaqs;
@@ -62,11 +64,11 @@ public class Theme  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="theme")
-    public Set getItemFaqs() {
+    public List<ItemFaq> getItemFaqs() {
         return this.itemFaqs;
     }
     
-    public void setItemFaqs(Set itemFaqs) {
+    public void setItemFaqs(List<ItemFaq> itemFaqs) {
         this.itemFaqs = itemFaqs;
     }
 

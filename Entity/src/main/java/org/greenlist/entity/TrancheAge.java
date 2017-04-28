@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,8 +25,8 @@ public class TrancheAge  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set objets = new HashSet(0);
-     private Set souhaits = new HashSet(0);
+     private List<Objet> objets = new ArrayList<>();
+     private List<Souhait> souhaits = new ArrayList<>();
 
     public TrancheAge() {
     }
@@ -34,7 +36,7 @@ public class TrancheAge  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public TrancheAge(int id, String libelle, Set objets, Set souhaits) {
+    public TrancheAge(int id, String libelle, List<Objet> objets, List<Souhait> souhaits) {
        this.id = id;
        this.libelle = libelle;
        this.objets = objets;
@@ -64,20 +66,20 @@ public class TrancheAge  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="trancheAge")
-    public Set getObjets() {
+    public List<Objet> getObjets() {
         return this.objets;
     }
     
-    public void setObjets(Set objets) {
+    public void setObjets(List<Objet> objets) {
         this.objets = objets;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="trancheAge")
-    public Set getSouhaits() {
+    public List<Souhait> getSouhaits() {
         return this.souhaits;
     }
     
-    public void setSouhaits(Set souhaits) {
+    public void setSouhaits(List<Souhait> souhaits) {
         this.souhaits = souhaits;
     }
 

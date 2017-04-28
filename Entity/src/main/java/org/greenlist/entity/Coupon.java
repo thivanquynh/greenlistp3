@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,7 +35,7 @@ public class Coupon  implements java.io.Serializable {
      private Date dateDebutValidite;
      private Date dateFinValidite;
      private String code;
-     private Set utilisateurs = new HashSet(0);
+     private List<Utilisateur> utilisateurs = new ArrayList<>();
 
     public Coupon() {
     }
@@ -47,7 +49,7 @@ public class Coupon  implements java.io.Serializable {
         this.dateDebutValidite = dateDebutValidite;
         this.code = code;
     }
-    public Coupon(int id, Admin admin, boolean ispublic, int valeur, Date dateDebutValidite, Date dateFinValidite, String code, Set utilisateurs) {
+    public Coupon(int id, Admin admin, boolean ispublic, int valeur, Date dateDebutValidite, Date dateFinValidite, String code, List<Utilisateur> utilisateurs) {
        this.id = id;
        this.admin = admin;
        this.ispublic = ispublic;
@@ -131,11 +133,11 @@ public class Coupon  implements java.io.Serializable {
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="coupons")
-    public Set getUtilisateurs() {
+    public List<Utilisateur> getUtilisateurs() {
         return this.utilisateurs;
     }
     
-    public void setUtilisateurs(Set utilisateurs) {
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
 

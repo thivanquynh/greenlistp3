@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class FrequenceEmail  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set preferences = new HashSet(0);
+     private List<Preference> preferences = new ArrayList<>();
 
     public FrequenceEmail() {
     }
@@ -33,7 +35,7 @@ public class FrequenceEmail  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public FrequenceEmail(int id, String libelle, Set preferences) {
+    public FrequenceEmail(int id, String libelle, List<Preference> preferences) {
        this.id = id;
        this.libelle = libelle;
        this.preferences = preferences;
@@ -62,11 +64,11 @@ public class FrequenceEmail  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="frequenceEmail")
-    public Set getPreferences() {
+    public List<Preference> getPreferences() {
         return this.preferences;
     }
     
-    public void setPreferences(Set preferences) {
+    public void setPreferences(List<Preference> preferences) {
         this.preferences = preferences;
     }
 
