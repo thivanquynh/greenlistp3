@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,8 +28,8 @@ public class Panier  implements java.io.Serializable {
 
      private int id;
      private Utilisateur utilisateur;
-     private Set utilisateurs = new HashSet(0);
-     private Set objets = new HashSet(0);
+     private List<Utilisateur> utilisateurs = new ArrayList<>();
+     private List<Objet> objets = new ArrayList<>();
 
     public Panier() {
     }
@@ -36,7 +38,7 @@ public class Panier  implements java.io.Serializable {
     public Panier(int id) {
         this.id = id;
     }
-    public Panier(int id, Utilisateur utilisateur, Set utilisateurs, Set objets) {
+    public Panier(int id, Utilisateur utilisateur, List<Utilisateur> utilisateurs, List<Objet> objets) {
        this.id = id;
        this.utilisateur = utilisateur;
        this.utilisateurs = utilisateurs;
@@ -66,20 +68,20 @@ public class Panier  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="panier")
-    public Set getUtilisateurs() {
+    public List<Utilisateur> getUtilisateurs() {
         return this.utilisateurs;
     }
     
-    public void setUtilisateurs(Set utilisateurs) {
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="echanges")
-    public Set getObjets() {
+    public List<Objet> getObjets() {
         return this.objets;
     }
     
-    public void setObjets(Set objets) {
+    public void setObjets(List<Objet> objets) {
         this.objets = objets;
     }
 

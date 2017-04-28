@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,9 +30,9 @@ public class Preference  implements java.io.Serializable {
      private int id;
      private FrequenceEmail frequenceEmail;
      private Utilisateur utilisateur;
-     private Set typenotifications = new HashSet(0);
-     private Set typeEmails = new HashSet(0);
-     private Set utilisateurs = new HashSet(0);
+     private List<Typenotification> typenotifications = new ArrayList<>();
+     private List<TypeEmail> typeEmails = new ArrayList<>();
+     private List<Utilisateur> utilisateurs = new ArrayList<>();
 
     public Preference() {
     }
@@ -40,7 +42,7 @@ public class Preference  implements java.io.Serializable {
         this.id = id;
         this.frequenceEmail = frequenceEmail;
     }
-    public Preference(int id, FrequenceEmail frequenceEmail, Utilisateur utilisateur, Set typenotifications, Set typeEmails, Set utilisateurs) {
+    public Preference(int id, FrequenceEmail frequenceEmail, Utilisateur utilisateur, List<Typenotification> typenotifications, List<TypeEmail> typeEmails, List<Utilisateur> utilisateurs) {
        this.id = id;
        this.frequenceEmail = frequenceEmail;
        this.utilisateur = utilisateur;
@@ -82,11 +84,11 @@ public class Preference  implements java.io.Serializable {
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="preferences")
-    public Set getTypenotifications() {
+    public List<Typenotification> getTypenotifications() {
         return this.typenotifications;
     }
     
-    public void setTypenotifications(Set typenotifications) {
+    public void setTypenotifications(List<Typenotification> typenotifications) {
         this.typenotifications = typenotifications;
     }
 
@@ -94,20 +96,20 @@ public class Preference  implements java.io.Serializable {
     @JoinTable(name="definit_mail", catalog="projet3", joinColumns = { 
         @JoinColumn(name="IDPREFERENCE", nullable=false, updatable=false) }, inverseJoinColumns = { 
         @JoinColumn(name="ID", nullable=false, updatable=false) })
-    public Set getTypeEmails() {
+    public List<TypeEmail> getTypeEmails() {
         return this.typeEmails;
     }
     
-    public void setTypeEmails(Set typeEmails) {
+    public void setTypeEmails(List<TypeEmail> typeEmails) {
         this.typeEmails = typeEmails;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="preference")
-    public Set getUtilisateurs() {
+    public List<Utilisateur> getUtilisateurs() {
         return this.utilisateurs;
     }
     
-    public void setUtilisateurs(Set utilisateurs) {
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
 

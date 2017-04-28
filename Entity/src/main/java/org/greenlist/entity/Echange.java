@@ -2,8 +2,10 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,11 +42,11 @@ public class Echange  implements java.io.Serializable {
      private boolean hasvalidatedusera;
      private boolean hasvalidateduserb;
      private Date dateConclusion;
-     private Set rdvs = new HashSet(0);
-     private Set objets = new HashSet(0);
-     private Set echanges = new HashSet(0);
-     private Set notes = new HashSet(0);
-     private Set messages = new HashSet(0);
+     private List<Rdv> rdvs = new ArrayList<>();
+     private List<Object> objets = new ArrayList<>();
+     private List<Echange> echanges = new ArrayList<>();
+     private List<Note> notes = new ArrayList<>();
+     private List<Message> messages = new ArrayList<>();
 
     public Echange() {
     }
@@ -59,7 +61,7 @@ public class Echange  implements java.io.Serializable {
         this.hasvalidateduserb = hasvalidateduserb;
         this.dateConclusion = dateConclusion;
     }
-    public Echange(int id, Conclusionechange conclusionechange, Echange echange, MotifRefus motifRefus, Utilisateur utilisateurByIdusera, Utilisateur utilisateurByIduserb, Date dateCreation, Date dateDebutNegociation, Date dateValidationNegociation, Date dateEchange, boolean hasvalidatedusera, boolean hasvalidateduserb, Date dateConclusion, Set rdvs, Set objets, Set echanges, Set notes, Set messages) {
+    public Echange(int id, Conclusionechange conclusionechange, Echange echange, MotifRefus motifRefus, Utilisateur utilisateurByIdusera, Utilisateur utilisateurByIduserb, Date dateCreation, Date dateDebutNegociation, Date dateValidationNegociation, Date dateEchange, boolean hasvalidatedusera, boolean hasvalidateduserb, Date dateConclusion, List<Rdv> rdvs, List<Object> objets, List<Echange> echanges, List<Note> notes, List<Message> messages) {
        this.id = id;
        this.conclusionechange = conclusionechange;
        this.echange = echange;
@@ -213,47 +215,47 @@ public class Echange  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="echange")
-    public Set getRdvs() {
+    public List<Rdv> getRdvs() {
         return this.rdvs;
     }
     
-    public void setRdvs(Set rdvs) {
+    public void setRdvs(List<Rdv> rdvs) {
         this.rdvs = rdvs;
     }
 
 @ManyToMany(fetch=FetchType.LAZY, mappedBy="echanges")
-    public Set getObjets() {
+    public List<Object> getObjets() {
         return this.objets;
     }
     
-    public void setObjets(Set objets) {
+    public void setObjets(List<Object> objets) {
         this.objets = objets;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="echange")
-    public Set getEchanges() {
+    public List<Echange> getEchanges() {
         return this.echanges;
     }
     
-    public void setEchanges(Set echanges) {
+    public void setEchanges(List<Echange> echanges) {
         this.echanges = echanges;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="echange")
-    public Set getNotes() {
+    public List<Note> getNotes() {
         return this.notes;
     }
     
-    public void setNotes(Set notes) {
+    public void setNotes(List<Note> notes) {
         this.notes = notes;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="echange")
-    public Set getMessages() {
+    public List<Message> getMessages() {
         return this.messages;
     }
     
-    public void setMessages(Set messages) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
 

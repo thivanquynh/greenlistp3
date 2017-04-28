@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,8 +28,8 @@ public class Produit  implements java.io.Serializable {
      private int id;
      private Groupe groupe;
      private String libelle;
-     private Set souhaits = new HashSet(0);
-     private Set objets = new HashSet(0);
+     private List<Souhait> souhaits = new ArrayList<>();
+     private List<Objet> objets = new ArrayList<>();
 
     public Produit() {
     }
@@ -38,7 +40,7 @@ public class Produit  implements java.io.Serializable {
         this.groupe = groupe;
         this.libelle = libelle;
     }
-    public Produit(int id, Groupe groupe, String libelle, Set souhaits, Set objets) {
+    public Produit(int id, Groupe groupe, String libelle, List<Souhait> souhaits, List<Objet> objets) {
        this.id = id;
        this.groupe = groupe;
        this.libelle = libelle;
@@ -79,20 +81,20 @@ public class Produit  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="produit")
-    public Set getSouhaits() {
+    public List<Souhait> getSouhaits() {
         return this.souhaits;
     }
     
-    public void setSouhaits(Set souhaits) {
+    public void setSouhaits(List<Souhait> souhaits) {
         this.souhaits = souhaits;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="produit")
-    public Set getObjets() {
+    public List<Objet> getObjets() {
         return this.objets;
     }
     
-    public void setObjets(Set objets) {
+    public void setObjets(List<Objet> objets) {
         this.objets = objets;
     }
 

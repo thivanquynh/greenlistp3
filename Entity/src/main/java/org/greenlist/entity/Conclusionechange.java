@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Conclusionechange  implements java.io.Serializable {
 
      private int id;
      private String libelle;
-     private Set echanges = new HashSet(0);
+     private List<Echange> echanges = new ArrayList<>();
 
     public Conclusionechange() {
     }
@@ -33,7 +35,7 @@ public class Conclusionechange  implements java.io.Serializable {
         this.id = id;
         this.libelle = libelle;
     }
-    public Conclusionechange(int id, String libelle, Set echanges) {
+    public Conclusionechange(int id, String libelle, List<Echange> echanges) {
        this.id = id;
        this.libelle = libelle;
        this.echanges = echanges;
@@ -62,11 +64,11 @@ public class Conclusionechange  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="conclusionechange")
-    public Set getEchanges() {
+    public List<Echange> getEchanges() {
         return this.echanges;
     }
     
-    public void setEchanges(Set echanges) {
+    public void setEchanges(List<Echange> echanges) {
         this.echanges = echanges;
     }
 

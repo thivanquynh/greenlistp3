@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +30,7 @@ public class Messagepublic  implements java.io.Serializable {
      private Objet objet;
      private Utilisateur utilisateur;
      private String message;
-     private Set messagepublics = new HashSet(0);
+     private List<Messagepublic> messagepublics = new ArrayList<>();
 
     public Messagepublic() {
     }
@@ -39,7 +41,7 @@ public class Messagepublic  implements java.io.Serializable {
         this.objet = objet;
         this.message = message;
     }
-    public Messagepublic(int id, Messagepublic messagepublic, Objet objet, Utilisateur utilisateur, String message, Set messagepublics) {
+    public Messagepublic(int id, Messagepublic messagepublic, Objet objet, Utilisateur utilisateur, String message, List<Messagepublic> messagepublics) {
        this.id = id;
        this.messagepublic = messagepublic;
        this.objet = objet;
@@ -101,11 +103,11 @@ public class Messagepublic  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="messagepublic")
-    public Set getMessagepublics() {
+    public List<Messagepublic> getMessagepublics() {
         return this.messagepublics;
     }
     
-    public void setMessagepublics(Set messagepublics) {
+    public void setMessagepublics(List<Messagepublic> messagepublics) {
         this.messagepublics = messagepublics;
     }
 

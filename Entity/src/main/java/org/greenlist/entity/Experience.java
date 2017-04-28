@@ -2,7 +2,9 @@ package org.greenlist.entity;
 // Generated 28 avr. 2017 10:03:43 by Hibernate Tools 4.3.1
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Experience  implements java.io.Serializable {
 
      private int id;
      private String experience;
-     private Set utilisateurs = new HashSet(0);
+     private List<Utilisateur> utilisateurs = new ArrayList<>();
 
     public Experience() {
     }
@@ -33,7 +35,7 @@ public class Experience  implements java.io.Serializable {
         this.id = id;
         this.experience = experience;
     }
-    public Experience(int id, String experience, Set utilisateurs) {
+    public Experience(int id, String experience, List<Utilisateur> utilisateurs) {
        this.id = id;
        this.experience = experience;
        this.utilisateurs = utilisateurs;
@@ -62,11 +64,11 @@ public class Experience  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="experience")
-    public Set getUtilisateurs() {
+    public List<Utilisateur> getUtilisateurs() {
         return this.utilisateurs;
     }
     
-    public void setUtilisateurs(Set utilisateurs) {
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
 
