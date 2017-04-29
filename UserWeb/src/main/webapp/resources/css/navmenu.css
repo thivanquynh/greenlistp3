@@ -20,6 +20,26 @@
     cursor: hand;
     text-align: center;
     margin: 0;
+    border: 0;
+}
+
+.logoGLIcon{
+    margin-right: 20px;
+    width: 45px;
+    height: 45px;    
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoGL{
+    width: 35px;
+    height: 35px;
+    background-image: url('../images/gl_logo1.png');
+    background-size: cover;
 }
 
 .basketMainNavBar {

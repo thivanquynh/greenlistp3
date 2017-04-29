@@ -23,6 +23,12 @@
 
 /*** Home  **/
 
+.mainPanel{
+    margin: 10px 50px 10px 50px;
+    display: flex;
+    justify-content: center;
+}
+
 .accueilPanel {
     display: flex;
     flex-direction: column;
@@ -53,8 +59,6 @@
     text-align: center;
     display: block;
 }
-
-#titreValuer
 
 #valeur1 {
     background-image: url(../images/Valeur1.png);
@@ -94,6 +98,13 @@
     .valeursBloc {
         width: 430px;
     }
+    
+    .mainPanel{
+    width: 100%;
+    margin: 5px;
+}
+    
+    
 }
 
 

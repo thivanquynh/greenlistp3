@@ -2,8 +2,12 @@
 @import url("#{resource['css:ionicons.css']}");
 @import url("#{resource['css:main.css']}"); 
 @import url("#{resource['css:echange.css']}");
-@import url("#{resource['css:navmenu.css']}"); 
+@import url("#{resource['css:navmenu.css']}");
+@import url("#{resource['bandeau.css']}"); 
 @import url("#{resource['css:dashboard.css']}");
 @import url("#{resource['css:tools.css']}");
 @import url("#{resource['css:normalize.css']}");
 @import url("#{resource['css:resultats.css']}");
+@import url("#{resource['css:connexion.css']}"); 
+@import url("#{resource['objet.css']}"); 
+@import url("#{resource['souhait.css']}"); 
