@@ -71,6 +71,7 @@
 		<module>Data_EJB</module>
 		<module>Business_API</module>
 		<module>Business_EJB</module>
+		<module>Greenlist_EAR</module>
 	</modules>
 	<description>Groupe FKQ-ROM</description>
 </project>

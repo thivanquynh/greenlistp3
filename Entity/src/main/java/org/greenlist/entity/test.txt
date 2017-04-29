@@ -1,0 +1,20 @@
+ Le volume dans le lecteur C s'appelle OS
+ Le num‚ro de s‚rie du volume est F444-95C2
+
+ R‚pertoire de C:\Users\markus\git\greenlistp3\Entity\src\main\java\org\greenlist\entity
+
+[.]                      [..]                     Admin.java
+Adresse.java             Conclusionechange.java   Coupon.java
+Domaine.java             Echange.java             Email.java
+Experience.java          FrequenceEmail.java      Groupe.java
+ItemFaq.java             Liste.java               Message.java
+Messagepublic.java       MotifRadiation.java      MotifRefus.java
+Motifticket.java         Note.java                Notification.java
+Objet.java               package-info.java        Panier.java
+Photo.java               Preference.java          Produit.java
+Rdv.java                 Souhait.java             test.txt
+Theme.java               Ticket.java              TrancheAge.java
+TypeEmail.java           Typenotification.java    Typeticket.java
+Utilisateur.java         
+              35 fichier(s)          104ÿ628 octets
+               2 R‚p(s)  91ÿ649ÿ105ÿ920 octets libres
