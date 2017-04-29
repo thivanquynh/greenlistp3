@@ -6,7 +6,6 @@
     <version>0.0.1</version>
   </parent>
   <artifactId>Entity</artifactId>
-  <version>0.0.1</version>
   <dependencies>
 		<dependency>
 			<groupId>javax</groupId>

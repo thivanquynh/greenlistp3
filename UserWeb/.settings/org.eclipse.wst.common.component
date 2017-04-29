@@ -10,6 +10,15 @@
         <dependent-module archiveName="Entity-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Entity/Entity">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="Data_API-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Data_API/Data_API">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Business_EJB-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Business_EJB/Business_EJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Data_EJB-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Data_EJB/Data_EJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="UserWeb"/>
         <property name="java-output-path" value="/UserWeb/target/classes"/>
     </wb-module>
