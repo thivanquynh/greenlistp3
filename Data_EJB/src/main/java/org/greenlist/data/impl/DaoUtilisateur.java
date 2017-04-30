@@ -21,14 +21,14 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 	private EntityManager em;
 
 	/*
-	 * Récupération de l'utilisateur souhaite se connecter à partir de son
+	 * Rï¿½cupï¿½ration de l'utilisateur souhaite se connecter ï¿½ partir de son
 	 * pseudo et son mdp.
 	 * 
 	 * @param pseudo le pseudo de l'utilisateur
 	 * 
 	 * @param mdp le mot de passe de l'utilisateur
 	 * 
-	 * @return l'utilisateur connecté. Renvoie l'utilisateur si les pseudo et
+	 * @return l'utilisateur connectï¿½. Renvoie l'utilisateur si les pseudo et
 	 * mdp sont les bons, remonte une exception sinon.
 	 */
 	@Override
@@ -40,11 +40,11 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 	}
 
 	/*
-	 * Récupération d'un utilisateur à partir de son ID.
+	 * Rï¿½cupï¿½ration d'un utilisateur ï¿½ partir de son ID.
 	 * 
-	 * @param idUtilisateur l'id de l'utilisateur cherché
+	 * @param idUtilisateur l'id de l'utilisateur cherchï¿½
 	 * 
-	 * @return l'utilisateur cherché. Renvoie l'utilisateur si l'ID existe, et
+	 * @return l'utilisateur cherchï¿½. Renvoie l'utilisateur si l'ID existe, et
 	 * remonte une exception sinon.
 	 */
 	@Override

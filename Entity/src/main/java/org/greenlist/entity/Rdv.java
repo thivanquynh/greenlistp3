@@ -54,7 +54,7 @@ public class Rdv implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, targetEntity= Adresse.class)
 	@JoinColumn(name = "IDADRESSE", nullable = false)
 	public Adresse getAdresse() {
 		return this.adresse;

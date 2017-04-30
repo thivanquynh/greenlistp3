@@ -6,7 +6,6 @@
     <version>0.0.1</version>
   </parent>
   <artifactId>Business_API</artifactId>
-  <version>0.0.1</version>
   <dependencies>
 		<dependency>
 			<artifactId>Entity</artifactId>

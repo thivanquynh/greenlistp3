@@ -5,6 +5,11 @@
 	<artifactId>GreenListP3</artifactId>
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -33,9 +38,10 @@
 				<version>6.0</version>
 			</dependency>
 			<dependency>
-				<groupId>org.omnifaces</groupId>
-				<artifactId>omnifaces</artifactId>
-				<version>1.8.1</version>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -51,19 +57,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 	<modules>
 		<module>UserWeb</module>
 		<module>Entity</module>
@@ -71,7 +64,7 @@
 		<module>Data_EJB</module>
 		<module>Business_API</module>
 		<module>Business_EJB</module>
-		<module>Greenlist_EAR</module>
+		<module>GreenList_EAR</module>
 	</modules>
 	<description>Groupe FKQ-ROM</description>
 </project>

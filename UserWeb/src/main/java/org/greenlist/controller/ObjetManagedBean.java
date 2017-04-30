@@ -10,10 +10,8 @@ import org.greenlist.entity.Utilisateur;
 @ManagedBean(name = "mbObjet")
 @ViewScoped
 public class ObjetManagedBean {
-
-	@EJB
+	
 	private Utilisateur utilisateur;
-	@EJB
 	private Objet objet;
 	
 	

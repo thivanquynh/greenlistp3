@@ -21,12 +21,12 @@ import org.greenlist.entity.Utilisateur;
 
 /**
  * 
- * @author Stagiaire permet de faire le lien avec la base de donnée
+ * @author Stagiaire permet de faire le lien avec la base de donnï¿½e
  */
 @Remote(IDaoSouhait.class)
 @Singleton
 public class DaoSouhait implements IDaoSouhait {
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 
 	/**

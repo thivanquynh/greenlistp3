@@ -7,7 +7,6 @@
 		<version>0.0.1</version>
 	</parent>
 	<artifactId>Business_EJB</artifactId>
-	<version>0.0.1</version>
 	<packaging>ejb</packaging>
 	<dependencies>
 		<dependency>
@@ -23,7 +22,6 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

@@ -7,38 +7,43 @@
 		<version>0.0.1</version>
 	</parent>
 	<artifactId>Greenlist_EAR</artifactId>
-	<version>0.0.1</version>
 	<packaging>ear</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>Business_API</artifactId>
 			<version>0.0.1</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>Business_EJB</artifactId>
 			<version>0.0.1</version>
+			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>Data_API</artifactId>
 			<version>0.0.1</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>Data_EJB</artifactId>
 			<version>0.0.1</version>
+			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>Entity</artifactId>
 			<version>0.0.1</version>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.greenlist</groupId>
 			<artifactId>UserWeb</artifactId>
 			<version>0.0.1</version>
+			<type>war</type>
 		</dependency>
 	</dependencies>
 	<build>
@@ -53,7 +58,6 @@
 						<webModule>
 							<groupId>org.greenlist</groupId>
 							<artifactId>UserWeb</artifactId>
-							<version>0.0.1</version>
 							<uri>web.war</uri>
 							<contextRoot>/greenlist</contextRoot>
 						</webModule>

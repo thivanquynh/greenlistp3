@@ -15,15 +15,15 @@ import org.greenlist.entity.Photo;
 @Singleton
 public class DaoPhoto implements IDaoPhoto{
 	
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 	
 	private static final String CREATE_OBJET = "INSERT INTO Photo f (f.IDOBJET, f.url) VALUES (:pidObjet, :pUrl)";
 	
 	/**
-	 * Méthode pour ajouter une photo à un Objet
-	 * @param idObjet id de l'objet auquel la photo sera associé
-	 * @param urlPhoto url de la photo à ajouter
+	 * Mï¿½thode pour ajouter une photo ï¿½ un Objet
+	 * @param idObjet id de l'objet auquel la photo sera associï¿½
+	 * @param urlPhoto url de la photo ï¿½ ajouter
 	 */
 	public Photo ajouterPhoto(int idObjet, String urlPhoto){
 		Query query = em.createQuery(CREATE_OBJET).setParameter("pidObjet", idObjet)

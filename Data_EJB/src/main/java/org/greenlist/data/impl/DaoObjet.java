@@ -19,7 +19,7 @@ import org.greenlist.entity.Utilisateur;
 @Singleton
 public class DaoObjet implements IDaoObjet {
 	
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 	
 	private static final String REQUETTE_GET_OBJET_BY_ID = "SELECT o FROM Objet as o WHERE o.id = :pidObjet";
@@ -41,8 +41,8 @@ public class DaoObjet implements IDaoObjet {
 																				
 	private static final String REQUETTE_GET_OBJETS_BY_PRODUIT = "SELECT o from Objet o wehere o.produit + :pProduit" ;
 /**
- * Methode pour récupérer un objet par son id
- * @param idObjet id de l'objet recherché
+ * Methode pour rï¿½cupï¿½rer un objet par son id
+ * @param idObjet id de l'objet recherchï¿½
  */
 	@Override
 	public Objet getObjetById(int idObjet) {
@@ -52,7 +52,7 @@ public class DaoObjet implements IDaoObjet {
 	
 	/**
 	 * Methode pour ajouter un objet
-	 * @param objet Objet à créer
+	 * @param objet Objet ï¿½ crï¿½er
 	 */
 	@Override
 	public Objet createObjet(Objet objet) {	
@@ -64,8 +64,8 @@ public class DaoObjet implements IDaoObjet {
 	}
 	
 	/**
-	 * Methode pour récupérer l'ensemble des objets d'un utilisateur
-	 * @param utilisateur le propriétaire des objets recherchés
+	 * Methode pour rï¿½cupï¿½rer l'ensemble des objets d'un utilisateur
+	 * @param utilisateur le propriï¿½taire des objets recherchï¿½s
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -75,7 +75,7 @@ public class DaoObjet implements IDaoObjet {
 		return query.getResultList();
 	}
 /**
- * Methode pour rechercher les objets aillant un libellé ressemblant à une chaine de caractere
+ * Methode pour rechercher les objets aillant un libellï¿½ ressemblant ï¿½ une chaine de caractere
  * @param motClef Chaine que l'on cherche 
  */
 	@SuppressWarnings("unchecked")
@@ -91,7 +91,7 @@ public class DaoObjet implements IDaoObjet {
 	}
 	
 /**
- * Recherche des objets appartenant à un domaine
+ * Recherche des objets appartenant ï¿½ un domaine
  * @param domaine le domaine que l'on recherche
  */
 	@SuppressWarnings("unchecked")
@@ -102,7 +102,7 @@ public class DaoObjet implements IDaoObjet {
 	}
 
 	/**
-	 * Recherche des objets appartenant à un groupe
+	 * Recherche des objets appartenant ï¿½ un groupe
 	 * @param domaine le groupe que l'on recherche
 	 */
 	@SuppressWarnings("unchecked")
@@ -113,7 +113,7 @@ public class DaoObjet implements IDaoObjet {
 	}
 
 	/**
-	 * Recherche des objets appartenant à un produit
+	 * Recherche des objets appartenant ï¿½ un produit
 	 * @param domaine le produit que l'on recherche
 	 */
 	@SuppressWarnings("unchecked")
