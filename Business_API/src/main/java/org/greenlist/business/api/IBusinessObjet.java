@@ -16,14 +16,14 @@ public interface IBusinessObjet {
 	
 	
 	/**
-	 * 
+	 * Méthode qui permet d'obtenir une list d'objet d'un utilisateur
 	 * @param utilisateur
 	 * @return la liste d'objet de l'utilisateur 
 	 */
 	public List<Objet> getObjets(Utilisateur utilisateur);
 	
 	/**
-	 * 
+	 * Méthode qui permet d'obtenir les informations d'un objet à partir de ce dernier
 	 * @param objet que l'on rechercher
 	 * @return l'Objet Complet 
 	 */
