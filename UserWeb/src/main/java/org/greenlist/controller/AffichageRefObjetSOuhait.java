@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import org.greenlist.business.api.IBusinessGroupe;
 import org.greenlist.business.api.IBusinessObjet;
 import org.greenlist.business.api.IBusinessProduit;
 import org.greenlist.business.api.IBusinessTrancheAge;
@@ -24,7 +25,7 @@ public class AffichageRefObjetSOuhait {
 	@EJB
 	private IBusinessProduit proxyProduit;
 	@EJB
-	private IbusinessGroupe proxyGroupe;
+	private IBusinessGroupe proxyGroupe;
 	
 	
 	private List<TrancheAge> tranchesAges ;
