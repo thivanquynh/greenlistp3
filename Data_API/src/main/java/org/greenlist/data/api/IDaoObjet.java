@@ -14,7 +14,6 @@ public interface IDaoObjet {
 	Objet createObjet(Objet objet);
 	List<Objet> getObjetsByUtilisateur(Utilisateur utilisateur);
 	List<Objet> getObjetsByLibelle(String libelle);
-
 	List<Objet> getObjetsByDomaine(Domaine domaine);
 	List<Objet> getObjetsByGroupe(Groupe groupe);
 	List<Objet> getObjetsByProduit(Produit produit);
