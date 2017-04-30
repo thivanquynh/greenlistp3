@@ -65,12 +65,8 @@ public class AjoutObjetManagerBean {
 	
 	
 	
-	public IBusinessUtilisateur getUtilisateurProxy() {
-		return utilisateurProxy;
-	}
-	public void setUtilisateurProxy(IBusinessUtilisateur utilisateurProxy) {
-		this.utilisateurProxy = utilisateurProxy;
-	}
+
+	
 	public IBusinessObjet getProxyObjet() {
 		return proxyObjet;
 	}
@@ -83,12 +79,7 @@ public class AjoutObjetManagerBean {
 	public void setObjet(Objet objet) {
 		this.objet = objet;
 	}
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
+
 	
 	
 	

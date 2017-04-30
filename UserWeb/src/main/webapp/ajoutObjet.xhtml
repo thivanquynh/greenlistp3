@@ -31,30 +31,23 @@
                 <li class="groupCat">
                     <div class="catTitle">Groupe</div>
                     <h:selectOneListbox  value="#{}">
-                    
-                                <option value="trucDomain">lalalala</option>
-                                <option value="truc2Domain">lalalala</option>
-                                <option value="truc3Domain">lalalala</option>
-                                <option value="truc4Domain">lalalala</option>
-                           </h:selectOneListbox>
+
+							<h:selectOneMenu value="#{monBean.maValeur}">
+								<f:selectItems value=#{mbAfficheRefObjetSOuhait.getgroupes()} "/>
+							</h:selectOneMenu>
+						</h:selectOneListbox>
                 </li>
                 <li class="groupCat">
                     <div class="catTitle">Produit</div>
                    <h:selectOneListbox  value="#{mbObjetAjout.objet.setProduit()}">
-                                <option value="trucProduit">lalalala</option>
-                                <option value="truc2Produit">lalalala</option>
-                                <option value="truc3Produit">lalalala</option>
-                                <option value="truc4Produit">lalalala</option>
+                                 <f:selectItems value=#{mbAfficheRefObjetSOuhait.produits}"/>
                             </h:selectOneListbox>
                 </li>
                 <li class="ageCat">
                     <div class="catTitleSaut">Tranche d'âge</div>
-                    <ul>
-                        <li>Bébé<input type="checkbox" value="1"></li>
-                        <li>Enfant<input type="checkbox" value="2"></li>
-                        <li>Ado<input type="checkbox" value="3"></li>
-                        <li>Adulte<input type="checkbox" value="4"></li>
-                    </ul>
+                         <h:selectOneMenu value="#{mbObjetAjout.objet.setTrancheAge()}">
+   							 <f:selectItems value=#{mbAfficheRefObjetSOuhait.tranchesAges}"/>
+						</h:selectOneMenu>
                 </li>
             </ul>
             <ul class="catBloc">
