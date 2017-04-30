@@ -13,5 +13,9 @@ public interface IDaoDomaine {
 	 */
 	 List<Groupe> getGroupes(Domaine domaine);
 	
+	 /**
+	  * permet d'avoir les Domaines de la base
+	  * @return la liste de tous les domaines du SI
+	  */
 	 List<Domaine> getDomaines();
 }
