@@ -12,7 +12,7 @@ Messagepublic.java       MotifRadiation.java      MotifRefus.java
 Motifticket.java         Note.java                Notification.java
 Objet.java               package-info.java        Panier.java
 Photo.java               Preference.java          Produit.java
-Rdv.java                 Souhait.java             test.txt
+Rdv.java                 Souhait.java           
 Theme.java               Ticket.java              TrancheAge.java
 TypeEmail.java           Typenotification.java    Typeticket.java
 Utilisateur.java         

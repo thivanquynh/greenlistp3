@@ -10,107 +10,95 @@
 <h:body>
 	<ui:composition template="/WEB-INF/templates/base.xhtml">
 		<ui:define name="content">
-			<div class="pageObjet pageSouhait">
-				<div>
-					<!-- Titre de la page -->
-					<div class="oneRowBloc objetItem pageTitleBloc">
-						<p:button value="Ajouter un Objet"
-							icon="ui-icon-plus" styleClass="objetItem">
-							<f:param name="productId" value="10" />
-						</p:button>
-					</div>
+			  <div class="pageTitleBloc">
+            <div class="fa fa-plus fa-2x pageTitleIcon"></div>
+            <div class="pageTitle whiteColor grow">Ajouter un Objet</div>
+        </div>
 
-					<!-- Bloc de critères gauche -->
-					<div class="oneColBloc">
-						<div class="versusBloc">
-							<div class="oneColBloc">
-								<div class="oneRowBloc">
-									<input class="formItem inputText" type="text" value="Libellé" />
-								</div>
-								<div class="oneRowBloc">
-									<input class="formItem descriptionForm" type="text"
-										value="Description" />
-								</div>
-								<div class="oneRowBloc">
-									<select class="formItem inputText">
-										<option value="Marque">Marque</option>
-									</select>
-								</div>
-								<div class=" oneRowBloc">
-									<div class="formItem">Valeur</div>
-									<span class="ion-ios-snowy greenColor normalIcon"> </span>
-								</div>
-							</div>
+        <div class="criteresBloc">
+            <!-- Bloc de critères gauche -->
+            <ul class="catBloc">
+                <li class="domainIconBloc">
+                    <ul>
+                        <li>Domaine</li>
+                        <li class="domainIcon"><span class="fa fa-home"></span></li>
+                        <li class="domainIcon"><span class="fa fa-home"></span></li>
+                        <li class="domainIcon"><span class="fa fa-soccer-ball-o"></span></li>
+                        <li class="domainIcon"><span class="fa fa-gamepad"></span></li>
+                        <li class="domainIcon"><span class="fa fa-music"></span></li>
+                    </ul>
+                </li>
+                <li class="groupCat">
+                    <div class="catTitle">Groupe</div>
+                    <h:selectOneListbox  value="#{}">
+                    
+                                <option value="trucDomain">lalalala</option>
+                                <option value="truc2Domain">lalalala</option>
+                                <option value="truc3Domain">lalalala</option>
+                                <option value="truc4Domain">lalalala</option>
+                           </h:selectOneListbox>
+                </li>
+                <li class="groupCat">
+                    <div class="catTitle">Produit</div>
+                   <h:selectOneListbox  value="#{mbObjetAjout.objet.setProduit()}">
+                                <option value="trucProduit">lalalala</option>
+                                <option value="truc2Produit">lalalala</option>
+                                <option value="truc3Produit">lalalala</option>
+                                <option value="truc4Produit">lalalala</option>
+                            </h:selectOneListbox>
+                </li>
+                <li class="ageCat">
+                    <div class="catTitleSaut">Tranche d'âge</div>
+                    <ul>
+                        <li>Bébé<input type="checkbox" value="1"></li>
+                        <li>Enfant<input type="checkbox" value="2"></li>
+                        <li>Ado<input type="checkbox" value="3"></li>
+                        <li>Adulte<input type="checkbox" value="4"></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="catBloc">
+                <li class="descriptionInput">
+                    <div class="catTitle">Description</div>
+                    <input type="text" value="" />
+                </li>
+                <li class="valeurInput">
+                    <div class="catTitle">Valeur</div>
+                    <div>
+                        <input name="valeurSaisie" class="valeurInput" type="text" value="0" />
+                        <span class="fa fa-snowflake-o fa-2xbigIcon"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="photosBloc">
+            <div class="pageSubTitle">Ajouter des photos</div>
+            <div class="photosConteneur">
+                <div class="photoItem objetItem">
+                    <span class="fa fa-camera"></span>
+                </div>
+                <div class="photoItem objetItem">
+                    <span class="fa fa-camera"></span>
+                </div>
+                <div class="addIconBloc">
+                    <div class="addIcon">
+                        <span class="fa fa-plus"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-							<!-- Bloc de critères droit -->
-							<div class="oneColBloc">
-								<div class="oneRowBloc categoryBloc">
-									Catégorie
-									<button
-										class="buttonFormCategory ion-ios-home-outline souhaitItem smallIcon whiteColor"></button>
-									<button
-										class="buttonFormCategory ion-tshirt-outline objetItem smallIcon whiteColor"></button>
-									<button
-										class="buttonFormCategory ion-ios-football purpleItem smallIcon whiteColor"></button>
-									<button
-										class="buttonFormCategory ion-ios-game-controller-b-outline yellowItem smallIcon whiteColor"></button>
-									<button
-										class="buttonFormCategory ion-ios-musical-notes blueItem smallIcon whiteColor"></button>
-								</div>
-								<div class="oneRowBloc">
-									<select class="formItem inputText">
-										<option value="Sous-catégorie">Sous-catégorie</option>
-									</select>
-								</div>
-								<div class="oneRowBloc">
-									<select class="formItem inputText">
-										<option value="Sous-catégorie">Sous-sous-catégorie</option>
-									</select>
-								</div>
-								<div class="formItem oneRowBloc">
-									<div>Tranche d'âge</div>
-									<div>
-										<input type="range" value="15" max="50" min="0" step="5" />
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Bloc photos -->
-					<div class="oneRowBloc">
-						<div class="bigTitle objetItem whiteColor grow">Ajouter des
-							photos</div>
-					</div>
-					<div class="photosBloc sectionBloc">
-						<div class="photo">
-							<button
-								class="buttonFormCategory ion-ios-camera-outline objetItem smallIcon whiteColor"></button>
-						</div>
-						<div class="photo">
-							<button
-								class="buttonFormCategory ion-ios-camera-outline objetItem smallIcon whiteColor"></button>
-						</div>
-						<div class="photo">
-							<button
-								class="buttonFormCategory ion-ios-camera-outline objetItem smallIcon whiteColor"></button>
-						</div>
-					</div>
-
-					<!-- Bloc de boutons -->
-					<div class="boutonsBloc oneRowBloc">
-						<div>
-							<button class="buttonForm objetItem ion-checkmark-round">
-								| Valider</button>
-						</div>
-						<div>
-							<button class="buttonForm objetItem ion-close-round">|
-								Annuler</button>
-						</div>
-
-					</div>
-				</div>
-			</div>
+        <!-- Bloc de boutons -->
+        <div class="boutonsBloc">
+            <div class="pageBouton">
+                <div class="fa fa-check fa-2x objetItem"></div>
+                <div class="objetItem">Valider</div>
+            </div>            
+            <div class="pageBouton">
+                <div class="fa fa-close fa-2x objetItem"></div>
+                <div class="objetItem">Annuler</div>
+            </div>
+        </div>
 		</ui:define>
 	</ui:composition>
 </h:body>
