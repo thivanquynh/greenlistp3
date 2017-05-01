@@ -1,17 +1,17 @@
 package org.greenlist.controller;
 
 import java.util.Calendar;
-import java.util.List;
+//import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.print.attribute.standard.DateTimeAtCompleted;
+//import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import org.greenlist.business.api.IBusinessObjet;
-import org.greenlist.business.api.IBusinessUtilisateur;
+//import org.greenlist.business.api.IBusinessUtilisateur;
 import org.greenlist.entity.Objet;
-import org.greenlist.entity.Utilisateur;
+//import org.greenlist.entity.Utilisateur;
 
 @ManagedBean(name = "mbObjetAjout")
 @ViewScoped

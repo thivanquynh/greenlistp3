@@ -12,18 +12,30 @@ import org.greenlist.entity.Groupe;
 @Remote(IBusinessDomaine.class)
 @Stateless
 public class BusinessDomaine implements IBusinessDomaine {
-	
+
 	@EJB
 	private IDaoDomaine proxyObjet;
-	
+
 	@Override
 	public List<Groupe> getGroupes(Domaine domaine) {
-		return proxyObjet.getGroupes(domaine);
+		List<Groupe> groupes = null;
+		try {
+			groupes = proxyObjet.getGroupes(domaine);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return groupes;
 	}
 
 	@Override
 	public List<Domaine> getDomaines() {
-		return proxyObjet.getDomaines();
+		List<Domaine> domaines = null;
+		try {
+			domaines = proxyObjet.getDomaines();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return domaines;
 	}
 
 }

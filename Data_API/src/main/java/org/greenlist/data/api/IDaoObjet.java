@@ -10,13 +10,13 @@ import org.greenlist.entity.Utilisateur;
 
 public interface IDaoObjet {
 	
-	Objet getObjetById(int idObjet);
-	Objet createObjet(Objet objet);
-	List<Objet> getObjetsByUtilisateur(Utilisateur utilisateur);
-	List<Objet> getObjetsByLibelle(String libelle);
-	List<Objet> getObjetsByDomaine(Domaine domaine);
-	List<Objet> getObjetsByGroupe(Groupe groupe);
-	List<Objet> getObjetsByProduit(Produit produit);
+	Objet getObjetById(int idObjet) throws Exception;
+	Objet createObjet(Objet objet)throws Exception;
+	List<Objet> getObjetsByUtilisateur(Utilisateur utilisateur)throws Exception;
+	List<Objet> getObjetsByLibelle(String libelle)throws Exception;
+	List<Objet> getObjetsByDomaine(Domaine domaine)throws Exception;
+	List<Objet> getObjetsByGroupe(Groupe groupe)throws Exception;
+	List<Objet> getObjetsByProduit(Produit produit)throws Exception;
 	
 
 }

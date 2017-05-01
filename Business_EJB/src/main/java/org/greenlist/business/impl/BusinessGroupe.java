@@ -13,18 +13,30 @@ import org.greenlist.entity.Produit;
 @Remote(IBusinessGroupe.class)
 @Stateless
 public class BusinessGroupe implements IBusinessGroupe {
-	
+
 	@EJB
 	private IDaoGroupe proxyObjet;
-	
+
 	@Override
 	public List<Produit> getProduits(Groupe groupe) {
-		return proxyObjet.getProduits(groupe);
+		List<Produit> produits = null;
+		try {
+			produits = proxyObjet.getProduits(groupe);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return produits;
 	}
 
 	@Override
 	public List<Groupe> getGroupes() {
-		return proxyObjet.getGroupes();
+		List<Groupe> groupes = null;
+		try {
+			groupes = proxyObjet.getGroupes();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return groupes;
 	}
 
 }

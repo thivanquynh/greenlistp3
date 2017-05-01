@@ -20,18 +20,19 @@ public class DaoProduit implements IDaoProduit{
 	
 	
 	private static final String REQUETTE_GET_PRODUITS = "SELECT p FROM Produit as p ";
-	@PersistenceContext(unitName = "DATA_EJB")
+	
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 
 	@Override
-	public Groupe getGroupe(Produit produit) {
+	public Groupe getGroupe(Produit produit) throws Exception{
 	
 		return produit.getGroupe();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Produit> getProduits() {
+	public List<Produit> getProduits() throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_PRODUITS);
 		return query.getResultList();
 	}

@@ -11,11 +11,11 @@ public interface IDaoDomaine {
 	 * @param domaine le domaine dont on veut connaitre les groupes 
 	 * @return une liste des groupes
 	 */
-	 List<Groupe> getGroupes(Domaine domaine);
+	 List<Groupe> getGroupes(Domaine domaine)throws Exception;
 	
 	 /**
 	  * permet d'avoir les Domaines de la base
 	  * @return la liste de tous les domaines du SI
 	  */
-	 List<Domaine> getDomaines();
+	 List<Domaine> getDomaines() throws Exception;
 }

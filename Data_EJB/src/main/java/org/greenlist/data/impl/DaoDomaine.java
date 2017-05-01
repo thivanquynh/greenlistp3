@@ -18,21 +18,21 @@ import org.greenlist.entity.Groupe;
 @Singleton
 public class DaoDomaine implements IDaoDomaine{
 
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 	
 	private static final String REQUETTE_GET_DOMAINES = "SELECT d FROM Domaine as d ";
 	
 	
 	@Override
-	public List<Groupe> getGroupes(Domaine domaine) {
+	public List<Groupe> getGroupes(Domaine domaine) throws Exception{
 		
 		return domaine.getGroupes();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Domaine> getDomaines() {
+	public List<Domaine> getDomaines() throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_DOMAINES);
 		return query.getResultList();
 	}

@@ -26,20 +26,20 @@ import org.greenlist.entity.Utilisateur;
 @Remote(IDaoSouhait.class)
 @Singleton
 public class DaoSouhait implements IDaoSouhait {
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
+	private static final String GET_SOUHAITS_BY_UTLISATEUR = "SELECT u.listes FROM Utilisateur u WHERE u.id = :pIdUtilisateur";
+	private static final String GET_SOUHAITS_BY_LISTE = "SELECT l.souhaits FROM Liste l WHERE l.id = :pIdUtilisateur ";
+	private static final String GET_LISTE_BY_UTILISATEUR = "SELECT u.listes FROM Utilisateur u WHERE u.id = :pIdUtilisateur";
+	private static final String GET_SOUHAIT = "SELECT s FROM Souhait s WHERE s.id = :pIdSouhait";
 
 	/**
 	 * renvoi la liste de souhait avec un utilisateur en argument
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Souhait> getSouhaits(Utilisateur utilisateur) throws Exception{
-
-		final String req = "SELECT s FROM Souhait s " + "INNER JOIN Liste li ON li.id = s.idListe "
-				+ "INNER JOIN Utilisateur u ON u.id = li.idUtilisateur" + "WHERE u.id = :pidUtilisateur";
-
-		Query query = em.createQuery(req).setParameter("pidUtilisateur", utilisateur.getId());
+	public List<Souhait> getSouhaits(Utilisateur utilisateur) throws Exception {
+		Query query = em.createQuery(GET_SOUHAITS_BY_UTLISATEUR).setParameter("pidUtilisateur", utilisateur.getId());
 		return query.getResultList();
 	}
 
@@ -49,10 +49,8 @@ public class DaoSouhait implements IDaoSouhait {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Souhait> getSouhaits(Liste liste) throws Exception {
-		final String req = "SELECT s FROM Souhait s " + "INNER JOIN Liste li ON li.id=s.idListe"
-				+ "WHERE li.id = :pidListe";
 
-		Query query = em.createQuery(req).setParameter("pidListe", liste.getId());
+		Query query = em.createQuery(GET_SOUHAITS_BY_LISTE).setParameter("pidListe", liste.getId());
 		return query.getResultList();
 	}
 
@@ -63,12 +61,7 @@ public class DaoSouhait implements IDaoSouhait {
 	@Override
 	public List<Liste> getListes(Utilisateur utilisateur) throws Exception {
 
-		final String req = "SELECT li FROM Liste li" + "INNER JOIN Utilisateur u ON u.id = li.idUtilisateur"
-				+ "WHERE u.id = :pidUtilisateur";
-
-		// String sg ="SELECT li FROM Liste li WHERE li.utilisateur.id
-		// =:pidUtilisateur";
-		Query query = em.createQuery(req).setParameter("pidUtilisateur", utilisateur.getId());
+		Query query = em.createQuery(GET_LISTE_BY_UTILISATEUR).setParameter("pIdUtilisateur", utilisateur.getId());
 		return query.getResultList();
 	}
 
@@ -77,9 +70,8 @@ public class DaoSouhait implements IDaoSouhait {
 	 */
 	@Override
 	public Souhait getSouhait(Souhait souhait) throws Exception {
-		final String req = "SELECT s FROM Souhait s " + "WHERE s.id = :pid";
 
-		Query query = em.createQuery(req).setParameter("pid", souhait.getId());
+		Query query = em.createQuery(GET_SOUHAIT).setParameter("pIdSouhait", souhait.getId());
 		return (Souhait) query.getSingleResult();
 	}
 
@@ -107,7 +99,7 @@ public class DaoSouhait implements IDaoSouhait {
 		em.persist(liste);
 		em.getTransaction().commit();
 		em.close();
-		
+
 		return liste;
 	}
 

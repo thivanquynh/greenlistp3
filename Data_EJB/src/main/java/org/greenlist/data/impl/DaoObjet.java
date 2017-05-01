@@ -19,7 +19,7 @@ import org.greenlist.entity.Utilisateur;
 @Singleton
 public class DaoObjet implements IDaoObjet {
 	
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 	
 	private static final String REQUETTE_GET_OBJET_BY_ID = "SELECT o FROM Objet as o WHERE o.id = :pidObjet";
@@ -45,7 +45,7 @@ public class DaoObjet implements IDaoObjet {
  * @param idObjet id de l'objet recherché
  */
 	@Override
-	public Objet getObjetById(int idObjet) {
+	public Objet getObjetById(int idObjet) throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_OBJET_BY_ID).setParameter("pidObjet", idObjet);
 		return (Objet) query.getSingleResult();
 	}
@@ -55,7 +55,7 @@ public class DaoObjet implements IDaoObjet {
 	 * @param objet Objet à créer
 	 */
 	@Override
-	public Objet createObjet(Objet objet) {	
+	public Objet createObjet(Objet objet) throws Exception{	
 		em.getTransaction().begin();
 		em.persist(objet);
 		em.getTransaction().commit();
@@ -69,7 +69,7 @@ public class DaoObjet implements IDaoObjet {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Objet> getObjetsByUtilisateur(Utilisateur utilisateur) {
+	public List<Objet> getObjetsByUtilisateur(Utilisateur utilisateur) throws Exception{
 	//	utilisateur.getObjets();
 		Query query = em.createQuery(REQUETTE_GET_OBJETS_BY_UTILISATEUR).setParameter("pIdUtilisateur", utilisateur.getId());
 		return query.getResultList();
@@ -80,7 +80,7 @@ public class DaoObjet implements IDaoObjet {
  */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Objet> getObjetsByLibelle(String motClef) {
+	public List<Objet> getObjetsByLibelle(String motClef) throws Exception{
 		
 		StringBuilder sb = new StringBuilder();
 				motClef = sb.append("%").append(motClef).append("%").toString();
@@ -96,7 +96,7 @@ public class DaoObjet implements IDaoObjet {
  */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Objet> getObjetsByDomaine(Domaine domaine) {
+	public List<Objet> getObjetsByDomaine(Domaine domaine) throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_OBJETS_BY_LIBELLE).setParameter("pDomaine", domaine);
 		return query.getResultList();
 	}
@@ -107,7 +107,7 @@ public class DaoObjet implements IDaoObjet {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Objet> getObjetsByGroupe(Groupe groupe) {
+	public List<Objet> getObjetsByGroupe(Groupe groupe) throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_OBJETS_BY_LIBELLE).setParameter("pGroupe", groupe);
 		return query.getResultList();
 	}
@@ -118,7 +118,7 @@ public class DaoObjet implements IDaoObjet {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Objet> getObjetsByProduit(Produit produit) {
+	public List<Objet> getObjetsByProduit(Produit produit) throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_OBJETS_BY_LIBELLE).setParameter("pProduit", produit);
 		return query.getResultList();
 	}

@@ -11,11 +11,11 @@ public interface IDaoGroupe {
  * @param groupe le groupe dont on veut les produits
  * @return la liste des produits du groupe demandé 
  */
-	 List<Produit> getProduits(Groupe groupe);
+	 List<Produit> getProduits(Groupe groupe)throws Exception;
 	 
 	 /**
 	  * permet de recuperer l'integralisé des groupes du SI
 	  * @return la liste des groupes dans le SI
 	  */
-	 List<Groupe> getGroupes();
+	 List<Groupe> getGroupes() throws Exception;
 }

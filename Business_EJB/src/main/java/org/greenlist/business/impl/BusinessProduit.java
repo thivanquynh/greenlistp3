@@ -16,16 +16,28 @@ import org.greenlist.entity.Produit;
 public class BusinessProduit implements IBusinessProduit {
 
 	@EJB
-	private IDaoProduit proxyProduit ;
-	
+	private IDaoProduit proxyProduit;
+
 	@Override
 	public Groupe getGroupe(Produit produit) {
-		return proxyProduit.getGroupe(produit);
+		Groupe groupe = null;
+		try {
+			groupe = proxyProduit.getGroupe(produit);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return groupe;
 	}
 
 	@Override
 	public List<Produit> getProduits() {
-		return proxyProduit.getProduits();
+		List<Produit> produits = null;
+		try {
+			produits = proxyProduit.getProduits();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return produits;
 	}
 
 }

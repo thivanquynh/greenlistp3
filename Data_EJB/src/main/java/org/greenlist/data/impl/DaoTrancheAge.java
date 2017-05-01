@@ -17,14 +17,14 @@ import org.greenlist.entity.TrancheAge;
 public class DaoTrancheAge implements IDaoTrancheAge {
 
 	
-	@PersistenceContext(unitName = "DATA_EJB")
+	@PersistenceContext(unitName = "Data_EJB")
 	private EntityManager em;
 	
 	private static final String REQUETTE_GET_TRANCHES_AGE = "SELECT ta FROM TrancheAge as ta ";
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<TrancheAge> getTranchesAges() {
+	public List<TrancheAge> getTranchesAges() throws Exception{
 		Query query = em.createQuery(REQUETTE_GET_TRANCHES_AGE);
 		return query.getResultList();
 	}

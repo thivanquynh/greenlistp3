@@ -17,7 +17,13 @@ public class BusinessPhoto implements IBusinessPhoto {
 
 	@Override
 	public Photo ajouterPhoto(int idObjet, String urlPhoto) {
-		return proxyPhoto.ajouterPhoto(idObjet, urlPhoto);
+		Photo photo = null;
+		try {
+			photo = proxyPhoto.ajouterPhoto(idObjet, urlPhoto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return photo;
 	}
 
 }

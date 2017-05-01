@@ -11,10 +11,10 @@ public interface IDaoProduit {
  * @param produit le produit dont on veut le groupe 
  * @return
  */
-	Groupe getGroupe(Produit produit);
+	Groupe getGroupe(Produit produit)throws Exception;
 	/**
 	 * Permet de recuperer l integralité des Produits de la base 
 	 * @return
 	 */
-	List<Produit> getProduits();
+	List<Produit> getProduits()throws Exception;
 }

@@ -4,6 +4,6 @@ import org.greenlist.entity.Photo;
 
 public interface IDaoPhoto {
 	
-	Photo ajouterPhoto(int idObjet, String urlPhoto);
+	Photo ajouterPhoto(int idObjet, String urlPhoto)throws Exception;
 
 }
